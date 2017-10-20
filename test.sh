@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
+set -x
 expected="Hello World"
-actual=$(nc -v -i 1 localhost 5000)
+actual=$(nc -v localhost 5000)
 echo "Expecting: $expected"
 echo "Server says: $actual"
 if [ "$expected" != "$actual" ]; then
